@@ -40,6 +40,7 @@ sudo apt-get upgrade -y
 # Install PostgreSQL Server
 #--------------------------------------------------
 echo -e "\n---- Install PostgreSQL Server ----"
+unset LANG
 sudo apt-get install postgresql -y
 	
 echo -e "\n---- PostgreSQL $PG_VERSION Settings  ----"
