@@ -40,9 +40,10 @@ sudo apt-get upgrade -y
 # Install PostgreSQL Server
 #--------------------------------------------------
 echo -e "\n---- Install PostgreSQL Server ----"
-unset LANG
+
 sudo apt-get install postgresql -y
-sudo pg_createcluster 9.3 main -y
+unset LANG
+sudo pg_createcluster 9.3 main
 	
 echo -e "\n---- PostgreSQL $PG_VERSION Settings  ----"
 sudo sed -i s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/g /etc/postgresql/9.3/main/postgresql.conf
