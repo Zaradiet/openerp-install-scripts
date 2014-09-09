@@ -26,7 +26,7 @@ OE_HOME_EXT="/opt/$OE_USER/$OE_USER-server"
 OE_VERSION="8.0"
 
 #set the superadmin password
-OE_SUPERADMIN="superadminpassword"
+OE_SUPERADMIN="adminjahisil"
 OE_CONFIG="$OE_USER-server"
 
 #--------------------------------------------------
@@ -42,6 +42,7 @@ sudo apt-get upgrade -y
 echo -e "\n---- Install PostgreSQL Server ----"
 unset LANG
 sudo apt-get install postgresql -y
+sudo pg_createcluster 9.3 main -y
 	
 echo -e "\n---- PostgreSQL $PG_VERSION Settings  ----"
 sudo sed -i s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/g /etc/postgresql/9.3/main/postgresql.conf
